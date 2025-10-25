@@ -1,0 +1,15 @@
+<ion-header [translucent]="true" class="bg-sage">
+    <ion-toolbar>
+        <div class="flex justify-center my-2 border-darkblue bg-">
+        <img src="../../assets/logo.png" alt="logo Cinéphoria" class="rounded-2xl w-24 border border-darkblue"/>
+    </div>
+    </ion-toolbar>
+</ion-header>
+<div class="flex flex-col items-center">
+<h2>Bienvenue <span class="text-peach font-bold capitalize">username</span></h2>
+<p class="py-6">Vos séances à venir</p>
+<app-datatable [displayColumns]="displayColumns()" [data]="[]" class=""/>
+</div>
+<ion-footer class="bg-sage">
+    <ion-toolbar></ion-toolbar>
+</ion-footer>

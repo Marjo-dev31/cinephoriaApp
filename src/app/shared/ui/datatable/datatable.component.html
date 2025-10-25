@@ -1,0 +1,59 @@
+<section class="border-collapse">
+    <cdk-table [dataSource]="dataSource()">
+        @for (column of displayColumns(); track column.key) {
+            <ng-container [cdkColumnDef]="column.key" class="flex flex-col">
+                <cdk-header-cell
+                    *cdkHeaderCellDef
+                    class="flex-1 p-2 text-center font-semibold capitalize"
+                >
+                    {{ column.label }}
+                </cdk-header-cell>
+                <cdk-cell *cdkCellDef="let row" class="flex-1 p-2 text-center">
+                    {{ column.accessor(row) }}
+                </cdk-cell>
+            </ng-container>
+        }
+
+        <ng-container cdkColumnDef="action" class="flex flex-col">
+            <cdk-header-cell
+                *cdkHeaderCellDef
+                class="flex-1 p-2 text-center font-semibold capitalize"
+            >
+                e-billets
+            </cdk-header-cell>
+            <cdk-cell
+                *cdkCellDef="let row"
+                class="flex-1 p-2 text-center flex justify-evenly"
+            >
+                    <button (click)="editItem(row)" class="cursor-pointer">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"
+                            />
+                        </svg>
+                    </button>
+            </cdk-cell>
+        </ng-container>
+
+        <cdk-header-row
+            *cdkHeaderRowDef="columnKeys()"
+            class="flex bg-sage/30 border border-darkblue"
+        ></cdk-header-row>
+        <cdk-row
+            *cdkRowDef="let row; columns: columnKeys()"
+            class="flex border border-darkblue"
+        ></cdk-row>
+    </cdk-table>
+    @if (!dataSource().length) {
+        <p class="text-center p-4 font-semibold">Aucun enregistrement</p>
+    }
+</section>
