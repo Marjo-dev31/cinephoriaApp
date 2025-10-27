@@ -17,7 +17,7 @@ export class DatatableComponent {
     data =
         input.required<OrderInterface[]>();
 
-    onEditItem = output();
+    onEditItem = output<OrderInterface>();
 
     public readonly url = `${environment.serverUrl}/uploads/`;
     
@@ -28,6 +28,6 @@ export class DatatableComponent {
     ]);
 
     editItem(item: any) {
-        this.onEditItem.emit(item);
+     this.onEditItem.emit(item);
     }
 }

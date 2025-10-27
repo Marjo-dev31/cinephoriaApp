@@ -18,7 +18,11 @@
         }}</span>
     </h2>
     <p class="py-6">Vos séances à venir</p>
-    <app-datatable [displayColumns]="displayColumns()" [data]="previousShowing()" />
+    <app-datatable
+        [displayColumns]="displayColumns()"
+        [data]="previousShowing()"
+        (onEditItem)="displayQrCode($event)"
+    />
 </div>
 <ion-footer class="bg-sage">
     <ion-toolbar></ion-toolbar>
