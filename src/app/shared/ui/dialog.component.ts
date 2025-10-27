@@ -8,21 +8,21 @@ import { SafeUrl } from '@angular/platform-browser';
     imports: [QRCodeComponent],
     template: `
         <div class="m-auto">
-    <qrcode
-        (qrCodeURL)="onChangeURL($event)"
-        class="qrCode"
-        [qrdata]="dataToQrCode"
-        [allowEmptyString]="true"
-        [alt]="'qrCode'"
-        [ariaLabel]="'QRCode avec les données des billets'"
-        [elementType]="'img'"
-        [errorCorrectionLevel]="'M'"
-        [margin]="4"
-        [scale]="1"
-        [title]="'Mes e-billets'"
-        [width]="350"
-    ></qrcode>
-</div>
+            <qrcode
+                (qrCodeURL)="onChangeURL($event)"
+                class="qrCode"
+                [qrdata]="dataToQrCode"
+                [allowEmptyString]="true"
+                [alt]="'qrCode'"
+                [ariaLabel]="'QRCode avec les données des billets'"
+                [elementType]="'img'"
+                [errorCorrectionLevel]="'M'"
+                [margin]="4"
+                [scale]="1"
+                [title]="'Mes e-billets'"
+                [width]="350"
+            ></qrcode>
+        </div>
     `,
     styles: [
         `
@@ -40,8 +40,7 @@ export class DialogComponent {
     data = inject(DIALOG_DATA) || [];
     qrCodeDownloadLink: SafeUrl = '';
 
-    dataToQrCode = `${this.data.showing.startAt}/${this.data.showing.endAt}/${this.data.showing.room.number}/${this.data.showing.movie.title}/${this.data.showing.room.projectionQuality.quality}/${this.data.seat.length}`
-    effect = effect(()=> console.log(this.dataToQrCode))
+    dataToQrCode = `${this.data.showing.startAt}/${this.data.showing.endAt}/${this.data.showing.room.number}/${this.data.showing.movie.title}/${this.data.showing.room.projectionQuality.quality}/${this.data.quantity}`;
 
     onChangeURL(url: SafeUrl) {
         this.qrCodeDownloadLink = url;

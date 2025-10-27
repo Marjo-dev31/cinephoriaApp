@@ -12,13 +12,15 @@
                     <ul>
                         <li><img  [src]="this.url + column.accessor(row).showing.movie.image_Url"
                         [alt]="'Affiche du film' + column.accessor(row).showing.movie.title"></li>
-                        <li>{{ column.accessor(row).showing.movie.title }}</li>
-                        <li>{{ column.accessor(row).showing.date | date:'M/d/yy' }}</li>
-                        <li>salle: {{ column.accessor(row).showing.room.number }}</li>
+                        <li class="capitalize">{{ column.accessor(row).showing.movie.title }}</li>
+                        <li>{{ column.accessor(row).showing.date | date:'d/M/yy' }}</li>
+                        <li>Démarre à {{ column.accessor(row).showing.startAt }}</li>
+                        <li>Termine à {{ column.accessor(row).showing.endAt }}</li>
+                        <li>Salle: {{ column.accessor(row).showing.room.number }}</li>
                         @for (seat of column.accessor(row).seat; track $index) {
-                        <li>siège: {{ seat.number }}</li>}
-                        <li>{{ column.accessor(row).showing.startAt }}</li>
-                        <li>{{ column.accessor(row).showing.endAt }}</li>
+                        <li>Siège: {{ seat.number }}</li>} @empty {
+                            <p>Pas de siège réservé</p>
+                        }
                     </ul>
                     
                 </cdk-cell>
@@ -43,7 +45,7 @@
                                     viewBox="0 0 24 24"
                                     stroke-width="1.5"
                                     stroke="currentColor"
-                                    class="size-6"
+                                    class="size-12"
                                 >
                                     <path
                                         stroke-linecap="round"
