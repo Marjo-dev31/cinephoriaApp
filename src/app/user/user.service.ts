@@ -31,6 +31,7 @@
                         role: user.role,
                         access_token: user.access_token
                     });
+                    this.access_token.next(user.access_token)
                 }),
                 catchError((err) => {
                     const errorMessage = err?.error?.message;

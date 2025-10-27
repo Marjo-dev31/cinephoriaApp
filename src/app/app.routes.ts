@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -7,6 +8,7 @@ export const routes: Routes = [
   },
   {
     path:'myspace',
+    canActivate: [authGuard],
      loadComponent: () => import('./myspace/myspace.component').then((m) => m.MySpaceComponent)
   },
   {

@@ -5,7 +5,7 @@ import {
     IonFooter,
 } from '@ionic/angular/standalone';
 import { UserService } from '../user/user.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormComponent } from '../shared/ui/form/form.component';
 import { Validators } from '@angular/forms';
