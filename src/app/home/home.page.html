@@ -1,25 +1,32 @@
 <ion-header [translucent]="true">
     <ion-toolbar class="bg-sage" color="transparent">
         <div class="flex justify-center border-darkblue p-2">
-<img src="../../assets/logo.png" alt="logo Cinéphoria" class="rounded-2xl w-24 border border-darkblue"/>
-    </div>
+            <img
+                src="../../assets/logo.png"
+                alt="logo Cinéphoria"
+                class="rounded-2xl w-24 border border-darkblue"
+            />
+        </div>
     </ion-toolbar>
 </ion-header>
-<div class="border min-w-86 min-h-96 rounded-xl flex flex-col justify-center items-center m-auto w-2/3 bg-darkblue">
-
-        <h2 class="text-center text-4xl font-bold font-roboto p-2 capitalize rounded-lg bg-seasalt w-2/3">
-            se connecter
-        </h2>
-        @if (errorMessage()) {
-            <p class="text-red-600 text-center">{{ errorMessage() }}</p>
-        }
-        <app-form
-            [formModelConfig]="formModelConfig"
-            (outputForm)="handleLogin($event)"
-            class="w-86 mt-10 text-peach"
-        >
-        </app-form>
-    </div>
+<div
+    class="border min-w-86 min-h-96 rounded-xl flex flex-col justify-center items-center m-auto w-2/3 bg-darkblue"
+>
+    <h2
+        class="text-center text-4xl font-bold font-roboto p-2 capitalize rounded-lg bg-seasalt w-2/3"
+    >
+        se connecter
+    </h2>
+    @if (errorMessage()) {
+    <p class="text-red-600 text-center">{{ errorMessage() }}</p>
+    }
+    <app-form
+        [formModelConfig]="formModelConfig"
+        (outputForm)="handleLogin($event)"
+        class="w-86 mt-10 text-peach"
+    >
+    </app-form>
+</div>
 
 <ion-footer>
     <ion-toolbar></ion-toolbar>
