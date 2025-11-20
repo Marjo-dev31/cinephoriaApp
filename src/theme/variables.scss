@@ -1,2 +1,14 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+@use "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@theme {
+  --color-sage: #D4D2A5;
+  --color-peach: #FFBF69;
+  --color-seasalt: #F7F7F7;
+  --color-darkblue: #001D3D;
+  --font-montserrat: 'Montserrat', 'sans-serif';
+  --font-roboto: 'Roboto', 'sans-serif';
+}

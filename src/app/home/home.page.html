@@ -1,20 +1,33 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Cinéphoria
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+    <ion-toolbar class="bg-sage" color="transparent">
+        <div class="flex justify-center border-darkblue p-2">
+            <img
+                src="../../assets/logo.png"
+                alt="logo Cinéphoria"
+                class="rounded-2xl w-24 border border-darkblue"
+            />
+        </div>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
+<div
+    class="border min-w-86 min-h-96 rounded-xl flex flex-col justify-center items-center m-auto w-2/3 bg-darkblue"
+>
+    <h2
+        class="text-center text-4xl font-bold font-roboto p-2 capitalize rounded-lg bg-seasalt w-2/3"
+    >
+        se connecter
+    </h2>
+    @if (errorMessage()) {
+    <p class="text-red-600 text-center">{{ errorMessage() }}</p>
+    }
+    <app-form
+        [formModelConfig]="formModelConfig"
+        (outputForm)="handleLogin($event)"
+        class="w-86 mt-10 text-peach"
+    >
+    </app-form>
+</div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<ion-footer>
+    <ion-toolbar></ion-toolbar>
+</ion-footer>

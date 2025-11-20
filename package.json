@@ -1,5 +1,5 @@
 {
-  "name": "cinephoriaApp",
+  "name": "cinephoria-app-mobile",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -14,6 +14,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^20.0.0",
+    "@angular/cdk": "^20.2.10",
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",
     "@angular/core": "^20.0.0",
@@ -30,9 +31,11 @@
     "@capacitor/status-bar": "7.0.3",
     "@ionic/angular": "^8.0.0",
     "@ionic/eslint-config": "^0.4.0",
+    "angularx-qrcode": "^20.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "ionicons": "^7.0.0",
+    "jspdf": "^3.0.3",
     "prettier": "^3.6.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -50,9 +53,11 @@
     "@angular/language-service": "^20.0.0",
     "@capacitor/cli": "^7.4.3",
     "@ionic/angular-toolkit": "^12.0.0",
+    "@tailwindcss/postcss": "^4.1.14",
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.46.0",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.16.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^48.2.1",
@@ -64,6 +69,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14",
     "typescript": "~5.8.0"
   },
   "description": "An Ionic project"
